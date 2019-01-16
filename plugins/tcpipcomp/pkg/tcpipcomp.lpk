@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="TcpIpComp"/>
+    <Author Value="Silvio Clécio; Gilson Nunes Rodrigues; Waldir Paim"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="TCP/IP client/server."/>
+    <License Value="Please see the LICENSE file."/>
+    <Version Major="1" Release="3"/>
+    <Files Count="4">
+      <Item1>
+        <Filename Value="..\src\tcpipbase.pas"/>
+        <UnitName Value="TcpIpBase"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\src\tcpipclient.pas"/>
+        <UnitName Value="TcpIpClient"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\src\tcpipserver.pas"/>
+        <UnitName Value="TcpIpServer"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\src\tcpiputils.pas"/>
+        <UnitName Value="TcpIpUtils"/>
+      </Item4>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

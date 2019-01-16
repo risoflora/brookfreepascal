@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/assets/css/jquery-ui/themes/metro/blue/jquery-ui.min.css"/>
+<link rel="stylesheet" href="/assets/css/jquery-ui/themes/metro/blue/jtable.min.css"/>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery-ui.min.js"></script>
+<script src="/assets/js/jquery.jtable.min.js"></script>
+</head>
+<body>
+<div id="grid" style="width: 600px;"></div>
+<script>
+$(function() {
+	// prepare the grid
+	$('#grid').jtable({
+		actions: {
+			listAction: '/cgi1.bf/personlist',
+			createAction: '/cgi1.bf/personcreate',
+			updateAction: '/cgi1.bf/personupdate',
+			deleteAction: '/cgi1.bf/persondelete'
+		},
+		fields: {
+			Id: {
+				key: true,
+				create: false,
+				edit: false
+			},
+			Name: {
+				title: 'Name',
+				width: '40%'
+			}
+		},
+		title: 'Table of person',
+		paging: true,
+		pageSizes: [5, 10, 25],
+		pageSize: 5,
+		sorting: true,
+		defaultSorting: 'Id ASC'
+	});
+	// load person list from server
+	$('#grid').jtable('load');
+});
+</script>
+</body>
+</html>

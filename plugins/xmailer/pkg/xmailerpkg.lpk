@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="XMailerPkg"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src;..\3rdparty\synapse\source\lib"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="X-Mailer offers a really simple way to send e-mails using Free Pascal."/>
+    <License Value="Please see the LICENSE file."/>
+    <Version Major="1"/>
+    <Files Count="1">
+      <Item1>
+        <Filename Value="..\src\xmailer.pas"/>
+        <UnitName Value="XMailer"/>
+      </Item1>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

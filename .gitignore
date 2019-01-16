@@ -1,0 +1,14 @@
+*.[oa]
+*.ppu
+*.lps
+*.rst
+*.compiled
+*.bak*
+*.exe
+*.dll
+*.dbg
+brookdt.pas
+brookex.pas
+brookrt.pas
+packages/lib
+/.DS_Store

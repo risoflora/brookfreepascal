@@ -1,0 +1,4 @@
+# HTMLDoc plugin
+
+You can write a HTML file typing tags. But in particular situations, you could desire to build HTML documents coding directly in Object Pascal.
+For this purpose, you have HTMLDoc through which you can write headers, body with links and other relevant tags. And everything using only the frendly syntax of Object Pascal.

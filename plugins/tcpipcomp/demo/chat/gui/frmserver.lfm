@@ -1,0 +1,21 @@
+object frServer: TfrServer
+  Left = 244
+  Height = 240
+  Top = 150
+  Width = 320
+  Caption = 'frServer'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDesktopCenter
+  LCLVersion = '1.1'
+  object edMsg: TMemo
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 320
+    Align = alClient
+    TabOrder = 0
+  end
+end

@@ -1,0 +1,15 @@
+﻿The following people contributed to the Brook framework:
+
+Silvio Clecio (silvioprog)
+Luciano Souza (luchyanus)
+Joao Morais (jcmoraisjr)
+Marcos Douglas (mdbs99)
+Waldir Paim (waldirpaim)
+Luiz Americo Pereira Camara (blikblum)
+Reinier Olislagers (reiniero)
+Mario Ray Mahardhika (leledumbo)
+Michael van Ham (michaelvanham)
+Yuriy Pilgun (uaply)
+Gilson Nunes (gilsonnr)
+
+and special thanks to the Lazarus-BR group and FPC-Lazarus team.

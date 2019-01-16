@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="ConvUtilsPkg"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="Centimeters, inches, liters... Sometimes it's necessary to convert one measure to another and it is suitable to have something to help you. ConvUtils is the answer for you."/>
+    <License Value="Please see the LICENSE file."/>
+    <Version Major="1"/>
+    <Files Count="1">
+      <Item1>
+        <Filename Value="..\src\convutils.pas"/>
+        <UnitName Value="ConvUtils"/>
+      </Item1>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="FCL"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

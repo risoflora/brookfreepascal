@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="EasyRSSPkg"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="How much effort is required to process the XML structure of an RSS file? You shouldn't waste time. EasyRSS is the easiest way of Pascal developers provide news updating services in their applications.
+EasyRSS supports a Writer class through which you can build a server of news. However, it offers also a Reader class through which you can read the list of news available in a previous existent source news."/>
+    <License Value="Please see the LICENSE file."/>
+    <Version Major="1"/>
+    <Files Count="1">
+      <Item1>
+        <Filename Value="..\src\easyrss.pas"/>
+        <UnitName Value="EasyRSS"/>
+      </Item1>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

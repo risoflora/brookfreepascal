@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="BrookRT"/>
+    <Author Value="Silvio Clecio - https://github.com/silvioprog"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\includes"/>
+        <OtherUnitFiles Value="..\brokers;..\core"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="Brook runtime package."/>
+    <License Value="See the file LICENSE, included in this distribution, for details about the copyright."/>
+    <Version Major="4"/>
+    <Files Count="27">
+      <Item1>
+        <Filename Value="..\brokers\brookfclcgibroker.pas"/>
+        <UnitName Value="BrookFCLCGIBroker"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\brokers\brookfcleventlogbroker.pas"/>
+        <UnitName Value="BrookFCLEventLogBroker"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\brokers\brookfclfcgibroker.pas"/>
+        <UnitName Value="BrookFCLFCGIBroker"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\brokers\brookfclhttpappbroker.pas"/>
+        <UnitName Value="BrookFCLHttpAppBroker"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\brokers\brookfclhttpclientbroker.pas"/>
+        <UnitName Value="BrookFCLHttpClientBroker"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\brokers\brookfclhttpdaemonbroker.pas"/>
+        <UnitName Value="BrookFCLHttpDaemonBroker"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\brokers\brookhttpdefsbroker.pas"/>
+        <UnitName Value="BrookHttpDefsBroker"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\brokers\brookmessages_ptbr.pas"/>
+        <UnitName Value="BrookMessages_ptBR"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\brokers\brookstaticfilebroker.pas"/>
+        <UnitName Value="BrookStaticFileBroker"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\core\brookaction.pas"/>
+        <UnitName Value="BrookAction"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\core\brookapplication.pas"/>
+        <UnitName Value="BrookApplication"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\core\brookclasses.pas"/>
+        <UnitName Value="BrookClasses"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\core\brookconfigurator.pas"/>
+        <UnitName Value="BrookConfigurator"/>
+      </Item13>
+      <Item14>
+        <Filename Value="..\core\brookconstraints.pas"/>
+        <UnitName Value="BrookConstraints"/>
+      </Item14>
+      <Item15>
+        <Filename Value="..\core\brookconsts.pas"/>
+        <UnitName Value="BrookConsts"/>
+      </Item15>
+      <Item16>
+        <Filename Value="..\core\brookexception.pas"/>
+        <UnitName Value="BrookException"/>
+      </Item16>
+      <Item17>
+        <Filename Value="..\core\brookhttpclient.pas"/>
+        <UnitName Value="BrookHttpClient"/>
+      </Item17>
+      <Item18>
+        <Filename Value="..\core\brookhttpconsts.pas"/>
+        <UnitName Value="BrookHttpConsts"/>
+      </Item18>
+      <Item19>
+        <Filename Value="..\core\brookhttpdefs.pas"/>
+        <UnitName Value="BrookHttpDefs"/>
+      </Item19>
+      <Item20>
+        <Filename Value="..\core\brookhttputils.pas"/>
+        <UnitName Value="BrookHttpUtils"/>
+      </Item20>
+      <Item21>
+        <Filename Value="..\core\brooklogger.pas"/>
+        <UnitName Value="BrookLogger"/>
+      </Item21>
+      <Item22>
+        <Filename Value="..\core\brookmessages.pas"/>
+        <UnitName Value="BrookMessages"/>
+      </Item22>
+      <Item23>
+        <Filename Value="..\core\brookmiddleware.pas"/>
+        <UnitName Value="BrookMiddleware"/>
+      </Item23>
+      <Item24>
+        <Filename Value="..\core\brookrouter.pas"/>
+        <UnitName Value="BrookRouter"/>
+      </Item24>
+      <Item25>
+        <Filename Value="..\core\brooksession.pas"/>
+        <UnitName Value="BrookSession"/>
+      </Item25>
+      <Item26>
+        <Filename Value="..\core\brookutils.pas"/>
+        <UnitName Value="BrookUtils"/>
+      </Item26>
+      <Item27>
+        <Filename Value="..\includes\brook.inc"/>
+        <Type Value="Include"/>
+      </Item27>
+    </Files>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

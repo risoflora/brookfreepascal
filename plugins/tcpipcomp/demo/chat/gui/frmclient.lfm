@@ -1,0 +1,37 @@
+object frClient: TfrClient
+  Left = 244
+  Height = 240
+  Top = 150
+  Width = 320
+  Caption = 'frClient'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDesktopCenter
+  LCLVersion = '1.1'
+  object edText: TEdit
+    Left = 8
+    Height = 23
+    Top = 9
+    Width = 176
+    OnKeyPress = edTextKeyPress
+    TabOrder = 0
+  end
+  object btSend: TButton
+    Left = 192
+    Height = 25
+    Top = 7
+    Width = 75
+    Caption = '&Send'
+    OnClick = btSendClick
+    TabOrder = 1
+  end
+  object edMsg: TMemo
+    Left = 8
+    Height = 194
+    Top = 40
+    Width = 304
+    TabOrder = 2
+  end
+end

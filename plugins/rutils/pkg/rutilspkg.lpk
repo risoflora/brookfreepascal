@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="RUtilsPkg"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="RUtils offers some general purpose routines on string conversions, parsings or encodings."/>
+    <License Value="Please see the LICENSE file."/>
+    <Version Major="1" Minor="2"/>
+    <Files Count="2">
+      <Item1>
+        <Filename Value="..\src\rgutils.pas"/>
+        <UnitName Value="RGUtils"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\src\rutils.pas"/>
+        <UnitName Value="RUtils"/>
+      </Item2>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

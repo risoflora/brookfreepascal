@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="dOpfRT"/>
+    <Author Value="Silvio Clécio - https://github.com/silvioprog"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\core"/>
+        <OtherUnitFiles Value="..\core;..\brokers"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="Duall Sistemas, Object Persistence Framework."/>
+    <License Value="See the file LICENSE, included in this distribution, for details about the copyright."/>
+    <Version Major="3" Minor="2"/>
+    <Files Count="6">
+      <Item1>
+        <Filename Value="..\brokers\dsqldbbroker.pas"/>
+        <UnitName Value="dSQLdbBroker"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\core\dclasses.pas"/>
+        <UnitName Value="dClasses"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\core\dopf.pas"/>
+        <UnitName Value="dOpf"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\core\dopf.inc"/>
+        <Type Value="Binary"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\core\dsqlbuilder.pas"/>
+        <UnitName Value="dSqlBuilder"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\core\dutils.pas"/>
+        <UnitName Value="dUtils"/>
+      </Item6>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="FCL"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir);..\core"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

@@ -1,0 +1,53 @@
+object Form1: TForm1
+  Left = 266
+  Height = 240
+  Top = 145
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.1'
+  object StringGrid1: TStringGrid
+    Left = 0
+    Height = 165
+    Top = 0
+    Width = 320
+    Align = alClient
+    TabOrder = 0
+    OnSelection = StringGrid1Selection
+  end
+  object Button1: TButton
+    Left = 0
+    Height = 25
+    Top = 165
+    Width = 320
+    Align = alBottom
+    AutoSize = True
+    Caption = '&Load'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 0
+    Height = 25
+    Top = 215
+    Width = 320
+    Align = alBottom
+    AutoSize = True
+    Caption = '&Clear'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object btFind: TButton
+    Left = 0
+    Height = 25
+    Top = 190
+    Width = 320
+    Align = alBottom
+    Caption = '&Find'
+    OnClick = btFindClick
+    TabOrder = 3
+  end
+end

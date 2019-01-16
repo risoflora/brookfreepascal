@@ -1,0 +1,33 @@
+object frMain: TfrMain
+  Left = 244
+  Height = 240
+  Top = 150
+  Width = 320
+  Caption = 'frMain'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDesktopCenter
+  LCLVersion = '1.1'
+  object btGet: TButton
+    Left = 0
+    Height = 25
+    Top = 0
+    Width = 320
+    Align = alTop
+    Caption = '&Get'
+    OnClick = btGetClick
+    TabOrder = 0
+  end
+  object edResponse: TMemo
+    Left = 0
+    Height = 215
+    Top = 25
+    Width = 320
+    Align = alClient
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+    WordWrap = False
+  end
+end

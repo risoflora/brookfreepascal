@@ -1,0 +1,3 @@
+jTable: http://www.jtable.org
+dOPF: https://github.com/silvioprog/dopf
+RUtils: https://github.com/silvioprog/rutils
