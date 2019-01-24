@@ -109,7 +109,7 @@ Save and compile the project. Copy the resulting file to the CGI directory of yo
 * **[RUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/rutils)** – This plugin offers some general purpose routines on string conversions, parsings, encodings and others.
 * **[JTemplate](https://github.com/risoflora/brookfreepascal/tree/master/plugins/jtemplate)** – This plugin helps you to fill variables in a template file.
 * **[QTemplate](https://github.com/leledumbo/QTemplate)** – This plugin implements an alternative to FPTemplate engine.
-* **[EasyRSS](https://github.com/silvioprog/easyrss)** – This plugin is the easiest way of Pascal developers provide news updating services in their applications.
+* **[EasyRSS](https://github.com/risoflora/brookfreepascal/tree/master/plugins/easyrss)** – This plugin is the easiest way of Pascal developers provide news updating services in their applications.
 * **[XMailer](https://github.com/risoflora/brookfreepascal/tree/master/plugins/xmailer)** – This plugin offers a really simple way to send e-mails using Free Pascal..
 * **[AlgEx](https://github.com/risoflora/brookfreepascal/tree/master/plugins/algex)** – This plugin helps you to process algebric expressions passed as string.
 * **[MGeoIP](https://github.com/risoflora/brookfreepascal/tree/master/plugins/mgeoip)** – This plugin allows you to identify the name of country or city which IPs come from.
