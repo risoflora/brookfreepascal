@@ -41,6 +41,7 @@ uses
   CustApp,
   BrookLibraryLoader,
   BrookUtility,
+  BrookString,
   BrookStringMap,
   BrookHTTPUploads,
   BrookHTTPRequest,
@@ -63,6 +64,7 @@ type
     procedure FetchFields(AMap: TBrookStringMap; ADest: TStrings); virtual;
     procedure FetchParams(AMap: TBrookStringMap; ADest: TStrings); virtual;
     procedure FetchCookies(AMap: TBrookStringMap; ADest: TStrings); virtual;
+    procedure FetchPayload(ABuffer: TBrookString); virtual;
     procedure FetchUploads(AUploads: TBrookHTTPUploads); virtual;
     property Handle: TBrookHTTPRequest read FHandle;
   public
@@ -137,7 +139,10 @@ begin
   FetchParams(AHandle.Params, QueryFields);
   FetchCookies(AHandle.Cookies, CookieFields);
   if AHandle.IsUploading then
+  begin
+    FetchPayload(AHandle.Payload);
     FetchUploads(AHandle.Uploads);
+  end;
   HttpVersion := FHandle.Version;
   Method := FHandle.Method;
   PathInfo := FHandle.Path;
@@ -182,6 +187,14 @@ var
 begin
   for P in AMap do
     ADest.Add(Concat(P.Name, ADest.NameValueSeparator, P.Value));
+end;
+
+procedure THTTPRequest.FetchPayload(ABuffer: TBrookString);
+var
+  S: string;
+begin
+  S := ABuffer.Text;
+  InitContent(S);
 end;
 
 procedure THTTPRequest.FetchUploads(AUploads: TBrookHTTPUploads);
