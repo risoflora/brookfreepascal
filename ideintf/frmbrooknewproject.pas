@@ -123,7 +123,7 @@ end;
 procedure TfrBrookNewProject.btHelpClick(Sender: TObject);
 begin
   OpenURL(
-    'https://dl.dropboxusercontent.com/u/135304375/brookframework/doc/BrookAction.TBrookAction.html#Register');
+    'https://risoflora.github.io/brookfreepascal-docs/BrookAction.TBrookAction.html#Register');
 end;
 
 procedure TfrBrookNewProject.btAddActClick(Sender: TObject);

@@ -127,7 +127,7 @@ Free Pascal **3.0.4** and Lazarus **1.8.4**.
 
 ## DOCUMENTATION
 
-The project documentation is available in two formats: [HTML](http://silvioprog.github.io/brookframework/doc/index.html) and [PDF](http://silvioprog.github.io/brookframework/doc/brookframework-ref.pdf).
+The project documentation is available in two formats: [HTML](https://risoflora.github.io/brookfreepascal-docs/index.html) and [PDF](https://risoflora.github.io/brookfreepascal-docs/Brook%20for%20Free%20Pascal.pdf).
 
 ## VERSIONING
 
