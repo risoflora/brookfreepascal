@@ -17,7 +17,6 @@ begin
 {$IFDEF THREADED}
   Application.Server.Threaded := True;
 {$ENDIF}
-  Application.Server.Port := 8080;
   Application.Initialize;
   Application.Run;
 end.
