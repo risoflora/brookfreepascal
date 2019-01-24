@@ -97,11 +97,11 @@ http://localhost/cgi-bin/cgi1
 
 Open and install the file `brookex.lpk`. After the installation, select _File | New ..._ and, in _Brook framework_, choose the _Simple CGI application_ option as shown in the figure below:
 
-![Brook - New project](https://raw.githubusercontent.com/silvioprog/brookframework/gh-pages/images/brook_new-project.png)
+![Brook - New project](https://user-images.githubusercontent.com/1456829/51649575-cd69d800-1f63-11e9-878d-5191b74faf77.png)
 
 Save and compile the project. Copy the resulting file to the CGI directory of your web server and enjoy! See the final result:
 
-![Brook - Hello world](https://raw.githubusercontent.com/silvioprog/brookframework/gh-pages/images/brook_hello-world.png)
+![Brook - Hello world](https://user-images.githubusercontent.com/1456829/51649574-cd69d800-1f63-11e9-83ed-111a7cd19d79.png)
 
 ## PLUGINS
 
