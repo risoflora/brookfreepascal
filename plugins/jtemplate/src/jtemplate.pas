@@ -12,7 +12,7 @@ unit JTemplate;
 interface
 
 uses
-  SysUtils, StrUtils, Classes, FPJSON;
+  SysUtils, StrUtils, Classes, FPJSON, typinfo;
 
 type
   EJTemplate = class(Exception);
@@ -93,6 +93,7 @@ type
     function GetTagEscape: string;
     function GetTagPrefix: string;
     function GetTagSuffix: string;
+    procedure ParserAddFields(const ASection, Item, Value: string);
     procedure SetContent(AValue: TStrings);
     procedure SetFields(AValue: TJSONObject);
     procedure SetHtmlSupports(AValue: Boolean);
@@ -107,6 +108,9 @@ type
     procedure FreeStream; virtual;
     function GetStreamClass: TJTemplateStreamClass;
   public
+    procedure AddFields(AnObject: TObject; ASection: String = '';
+      PropKinds: TTypeKinds = [tkInteger,tkSString,tkLString,tkAString,tkWString,tkBool,tkInt64,
+      tkFloat]);
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure Replace(const ARecursive: Boolean = False);
@@ -157,6 +161,9 @@ const
 function StrToHtml(const S: string): string;
 
 implementation
+
+uses
+  rttiutils;
 
 function StrToHtml(const S: string): string;
 
@@ -360,6 +367,29 @@ begin
   Result := TJTemplateStream;
 end;
 
+procedure TJTemplate.AddFields(AnObject: TObject; ASection: String;
+  PropKinds: TTypeKinds);
+var
+  i: Integer;
+  APropsStorage: TPropsStorage;
+  APropList: TPropInfoList;
+begin
+  if not Assigned(AnObject) then
+    Exit;
+  APropsStorage:=TPropsStorage.Create;
+  APropsStorage.AObject:=AnObject;
+  APropsStorage.OnWriteString:=@ParserAddFields;
+  APropsStorage.Section:=ASection;
+  APropList:=TPropInfoList.Create(AnObject, PropKinds);
+  try
+    for i:=APropList.Count-1 downto 0 do
+      APropsStorage.StoreAnyProperty(APropList[i]);
+  finally
+    APropList.Free;
+    APropsStorage.Free;
+  end;
+end;
+
 function TJTemplate.GetContent: TStrings;
 begin
   Result := FContent;
@@ -400,6 +430,17 @@ end;
 function TJTemplate.GetTagSuffix: string;
 begin
   Result := FStream.FParser.FTagSuffix;
+end;
+
+procedure TJTemplate.ParserAddFields(const ASection, Item, Value: string);
+var
+  AName: String;
+begin
+  if ASection<>EmptyStr then
+    AName:=ASection+'.'+Item
+  else
+    AName:=Item;
+  Parser.Fields.Add(AnsiLowerCase(AName), Value);
 end;
 
 procedure TJTemplate.SetContent(AValue: TStrings);
