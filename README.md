@@ -169,4 +169,4 @@ You can download the last release [here](https://github.com/risoflora/brookfreep
 
 The Brook supports third party solutions and, for these, there is a broker file implementing your features. You can download the package containing all files [here](https://github.com/silvioprog/brookframework/releases/download/v3.0.0/third-party.zip).
 
-## Welcome to world of Brook! ![Welcome to the Brook's world!](http://l.yimg.com/us.yimg.com/i/mesg/emoticons7/113.gif)
+## Welcome to Brook! ![Welcome to Brook!](http://l.yimg.com/us.yimg.com/i/mesg/emoticons7/113.gif)
