@@ -1,0 +1,19 @@
+Captcha plugin
+==============
+
+Nowadays, Pascal is fully immersed in web development world. Therefore, it faces the severe issue of spams.
+This plugin provides the handling of verification images, usually to block the free and automatic access in login pages.
+
+Installation
+============
+
+1. Open the package "captchapkg.lpk", in the dialog that opens, click in "Use >>" and "Add to Project";
+
+Steps to run this demo
+======================
+
+On Windows, copy the DLLs "freetype-6.dll" and "zlib1.dll" and the font "LiberationSerif-Regular.ttf" to your project folder.
+
+On Linux, copy the font "LiberationSerif-Regular.ttf" to your project folder.
+
+Enjoy!

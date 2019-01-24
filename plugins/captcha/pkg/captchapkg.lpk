@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="CaptchaPkg"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="..\src"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <MsgFileName Value=""/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="Nowadays, Pascal is fully immersed in web development world. Therefore, it faces the severe issue of spams.
+This plugin provides the handling of verification images, usually to block the free and automatic access in login pages."/>
+    <License Value="Please see the LICENSE file."/>
+    <Version Major="1"/>
+    <Files Count="1">
+      <Item1>
+        <Filename Value="..\src\captcha.pas"/>
+        <UnitName Value="Captcha"/>
+      </Item1>
+    </Files>
+    <Type Value="RunTimeOnly"/>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="FCL"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
