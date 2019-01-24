@@ -11,5 +11,6 @@ Mario Ray Mahardhika (leledumbo)
 Michael van Ham (michaelvanham)
 Yuriy Pilgun (uaply)
 Gilson Nunes (gilsonnr)
+Al-Muhandis (Al-Muhandis)
 
 and special thanks to the Lazarus-BR group and FPC-Lazarus team.
