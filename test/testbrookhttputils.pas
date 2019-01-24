@@ -118,7 +118,7 @@ var
 begin
   r := BrookHttpRequest('http://www.google.com/humans.txt');
   AssertTrue(r.Content <> '');
-  r := BrookHttpRequest('http://brookframework.org/cgi-bin/cgi1.bf/' +
+  r := BrookHttpRequest('http://localhost/cgi-bin/cgi1.bf/' +
     'personlist?jtStartIndex=0&jtPageSize=5&jtSorting=id%20ASC', rmPost);
   AssertEquals('{ "Result" : "OK", "TotalRecordCount" : 11, "Records" : ' +
     '[{ "id" : 1, "name" : "Silvio Clecio" }, { "id" : 2, "name" : ' +
