@@ -1,6 +1,6 @@
 (*
   J-Template plugin.
-  Copyright (C) 2012-2014 Silvio Clecio.
+  Copyright (C) 2012-2019 Silvio Clecio, Al-Muhandis.
 
   Please see the LICENSE, README and AUTHORS files.
 *)
