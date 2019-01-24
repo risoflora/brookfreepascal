@@ -1,6 +1,6 @@
 ## INTRODUCTION
 
-**Brook framework** is the perfect [Free Pascal](http://freepascal.org/) framework for your web applications. It's pure Pascal. You don't need to leave your preferred programming language.
+**Brook for Free Pascal** is the perfect [Free Pascal](http://freepascal.org/) framework for your web applications. It's pure Pascal. You don't need to leave your preferred programming language.
 
 It's complete: simple actions or configurable actions for database access, advanced routing features, wizard for [Lazarus](http://lazarus.freepascal.org), support for internationalization, high compatibility with [JSON](http://json.org) structures, easy and elegant [REST](http://en.wikipedia.org/wiki/Representational_state_transfer) implementation, plugins for varied needs, extensible and decoupled brokers... In fact, you have several reasons to adopt Brook as your web development framework.
 
@@ -95,7 +95,7 @@ http://localhost/cgi-bin/cgi1
 
 #### If you are a Lazarus user:
 
-Open and install the file `brookex.lpk`. After the installation, select _File | New ..._ and, in _Brook framework_, choose the _Simple CGI application_ option as shown in the figure below:
+Open and install the file `brookex.lpk`. After the installation, select _File | New ..._ and, in _Brook for Free Pascal_, choose the _Simple CGI application_ option as shown in the figure below:
 
 ![Brook - New project](https://user-images.githubusercontent.com/1456829/51649575-cd69d800-1f63-11e9-878d-5191b74faf77.png)
 
@@ -119,7 +119,7 @@ Save and compile the project. Copy the resulting file to the CGI directory of yo
 
 ## LICENSE
 
-The source code of the Brook framework is distributed under the GNU Lesser General Public License. See the [project licence](https://github.com/risoflora/brookfreepascal/blob/master/LICENSE.txt) for copyright/license details.
+The source code of the Brook for Free Pascal is distributed under the GNU Lesser General Public License. See the [project licence](https://github.com/risoflora/brookfreepascal/blob/master/LICENSE.txt) for copyright/license details.
 
 ## SYSTEM REQUIREMENTS
 
@@ -131,7 +131,7 @@ The project documentation is available in two formats: [HTML](http://silvioprog.
 
 ## VERSIONING
 
-For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Brook framework will be maintained under the Semantic Versioning guidelines as much as possible.
+For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Brook for Free Pascal will be maintained under the Semantic Versioning guidelines as much as possible.
 
 Releases will be numbered with the following format:
 

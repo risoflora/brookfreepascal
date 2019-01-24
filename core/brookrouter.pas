@@ -1,5 +1,5 @@
 (*
-  Brook framework, Router Classes
+  Brook for Free Pascal
 
   Copyright (C) 2014-2019 Silvio Clecio
 
@@ -10,6 +10,8 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 *)
+
+{ Router classes. }
 
 unit BrookRouter;
 

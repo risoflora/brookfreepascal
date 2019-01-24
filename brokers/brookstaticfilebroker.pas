@@ -1,7 +1,7 @@
 (*
-  Brook framework, Static File Broker
+  Brook for Free Pascal
 
-  Copyright (C) 2014 Mario Ray Mahardhika
+  Copyright (C) 2014-2019 Mario Ray Mahardhika
 
   See the file LICENSE.txt, included in this distribution,
   for details about the copyright.
@@ -10,6 +10,8 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 *)
+
+{ Static file broker. }
 
 unit BrookStaticFileBroker;
 

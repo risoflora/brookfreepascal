@@ -1,7 +1,7 @@
 (*
-  Brook framework, FCL HttpDefs Broker
+  Brook for Free Pascal
 
-  Copyright (C) 2014 Yuriy Pilgun
+  Copyright (C) 2014-2019 Yuriy Pilgun
 
   See the file LICENSE.txt, included in this distribution,
   for details about the copyright.
@@ -10,6 +10,8 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 *)
+
+{ FCL HttpDefs broker. }
 
 unit BrookHttpDefsBroker;
 

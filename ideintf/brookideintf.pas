@@ -1,7 +1,7 @@
 (*
-  Brook framework, IDE Intf Unit
+  Brook for Free Pascal
 
-  Copyright (C) 2014 Silvio Clecio
+  Copyright (C) 2014-2019 Silvio Clecio
 
   See the file LICENSE.txt, included in this distribution,
   for details about the copyright.
@@ -10,6 +10,8 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 *)
+
+{ IDE intf unit. }
 
 unit BrookIDEIntf;
 
@@ -173,7 +175,7 @@ const
   le = LineEnding;
 
 resourcestring
-  SBrookIDEItemCategoryName = 'Brook framework';
+  SBrookIDEItemCategoryName = 'Brook for Free Pascal';
   SBrookAppName = 'Full CGI/FastCGI Application';
   SBrookAppDesc = 'Create a full CGI or FastCGI application.';
   SBrookHttpAppName = 'Embedded server';

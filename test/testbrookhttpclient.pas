@@ -8,7 +8,7 @@ uses
   BrookHTTPClient, BrookFCLHTTPClientBroker, fpcunit, testregistry;
 
 const
-  URL = 'http://silvioprog.github.io/brookframework/';
+  URL = 'http://www.google.com/humans.txt';
   LIB = 'fclweb';
   OK = 200;
   SOK = 'OK';

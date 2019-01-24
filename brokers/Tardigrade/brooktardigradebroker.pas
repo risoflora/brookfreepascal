@@ -1,31 +1,18 @@
-(*   _                     _
- *  | |__  _ __ ___   ___ | | __
- *  | '_ \| '__/ _ \ / _ \| |/ /
- *  | |_) | | | (_) | (_) |   <
- *  |_.__/|_|  \___/ \___/|_|\_\
- *
- *  –– microframework which helps to develop web Pascal applications.
- *
- * Copyright (c) 2012-2019 Silvio Clecio <silvioprog@gmail.com>
- *
- * This file is part of Brook framework.
- *
- * Brook framework is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * Brook framework is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with Brook framework.  If not, see <http://www.gnu.org/licenses/>.
- *)
+(*
+  Brook for Free Pascal
 
-{ Use this unit ONLY if you have a legacy application in Brook 3/4 and wants to
-  run it in Brook Tardigrade. }
+  Copyright (C) 2018-2019 Silvio Clecio
+
+  See the file LICENSE.txt, included in this distribution,
+  for details about the copyright.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*)
+
+{ Use this unit ONLY if you want to run Brook for Free Pascal
+  under Brook Framework. }
 
 unit BrookTardigradeBroker;
 
@@ -254,7 +241,7 @@ end;
 procedure THTTPResponse.CollectHeaders(AHeaders: TStrings);
 begin
   AHeaders.Add(Concat(BROOK_HTTP_HEADER_X_POWERED_BY,
-    AHeaders.NameValueSeparator, 'Brook framework'));
+    AHeaders.NameValueSeparator, 'Brook for Free Pascal'));
   inherited CollectHeaders(AHeaders);
 end;
 

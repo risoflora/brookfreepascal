@@ -1,7 +1,7 @@
 (*
-  Brook framework, FCL FastCGI Broker
+  Brook for Free Pascal
 
-  Copyright (C) 2014 Silvio Clecio
+  Copyright (C) 2014-2019 Silvio Clecio
 
   See the file LICENSE.txt, included in this distribution,
   for details about the copyright.
@@ -10,6 +10,8 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 *)
+
+{ FCL FastCGI broker. }
 
 unit BrookFCLFCGIBroker;
 
@@ -184,7 +186,7 @@ end;
 procedure TBrookFCGIResponse.CollectHeaders(AHeaders: TStrings);
 begin
   AHeaders.Add(BROOK_HTTP_HEADER_X_POWERED_BY + HS +
-    'Brook framework and FCL-Web.');
+    'Brook for Free Pascal and FCL-Web.');
   inherited CollectHeaders(AHeaders);
 end;
 

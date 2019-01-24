@@ -116,7 +116,7 @@ procedure TTestBrookHttpUtils.HttpRequest;
 var
   r: TBrookHttpResult;
 begin
-  r := BrookHttpRequest('http://silvioprog.github.io/brookframework/');
+  r := BrookHttpRequest('http://www.google.com/humans.txt');
   AssertTrue(r.Content <> '');
   r := BrookHttpRequest('http://brookframework.org/cgi-bin/cgi1.bf/' +
     'personlist?jtStartIndex=0&jtPageSize=5&jtSorting=id%20ASC', rmPost);

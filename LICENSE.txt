@@ -1,7 +1,7 @@
-This is the file LICENSE.txt, it applies to the Brook framework
-(http://silvioprog.github.io/brookframework), distributed by Silvio Clecio.
+This is the file LICENSE.txt, it applies to the Brook for Free Pascal
+(https://github.com/risoflora/brookfreepascal), distributed by Silvio Clecio.
 
-The source code of the Brook framework is distributed under the GNU
+The source code of the Brook for Free Pascal is distributed under the GNU
 Lesser General Public License (see the file LGPL.2.1.txt) with the
 following modification:
 

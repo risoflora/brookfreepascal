@@ -1,4 +1,4 @@
-﻿The following people contributed to the Brook framework:
+﻿The following people contributed to the Brook for Free Pascal:
 
 Silvio Clecio (silvioprog)
 Luciano Souza (luchyanus)
