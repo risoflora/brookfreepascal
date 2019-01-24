@@ -713,6 +713,8 @@ var
   VRedirect, VMatchMethod, VMatchPattern: Boolean;
 begin
   try
+    if ARequest.PathInfo = ES then
+      ARequest.PathInfo := US;
     if Assigned(FBeforeRoute) then
       FBeforeRoute(Self, ARequest, AResponse, VHandled);
     if VHandled then
