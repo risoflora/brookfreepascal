@@ -153,7 +153,7 @@ Please use the [issues page](https://github.com/risoflora/brookfreepascal/issues
 
 Brook would not be possible without important and active contributors. See their names [here](https://github.com/risoflora/brookfreepascal/blob/master/CONTRIBUTORS.txt).
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GE9VT768TLP74&lc=GB&item_name=Brook%20framework&item_number=brookframework&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=GE9VT768TLP74&lc=GB&item_name=Brook%20for%20Free%20Pascal&item_number=brookfreepascal&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">
   <img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif">
 </a>
 
@@ -167,6 +167,6 @@ You can download the last release [here](https://github.com/risoflora/brookfreep
 
 ## THIRD PARTY
 
-The Brook supports third party solutions and, for these, there is a broker file implementing your features. You can download the package containing all files [here](http://silvioprog.github.io/brookframework/download/third-party.zip).
+The Brook supports third party solutions and, for these, there is a broker file implementing your features. You can download the package containing all files [here](https://github.com/silvioprog/brookframework/releases/download/v3.0.0/third-party.zip).
 
 ## Welcome to world of Brook! ![Welcome to the Brook's world!](http://l.yimg.com/us.yimg.com/i/mesg/emoticons7/113.gif)
