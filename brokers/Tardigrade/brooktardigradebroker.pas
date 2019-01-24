@@ -104,8 +104,11 @@ type
   TApplication = class(TCustomApplication, IBrookApplication)
   private
     FLibraryLoader: TBrookLibraryLoader;
+    FOnIdle: TNotifyEvent;
     FServer: THTTPServer;
     function GetTerminated: Boolean;
+  protected
+    procedure DoRun; override;
   public
     constructor Create(AOwner: TComponent); override;
     procedure CreateForm(AInstanceClass: TComponentClass; out AReference);
@@ -115,6 +118,7 @@ type
     function Instance: TObject;
     property LibraryLoader: TBrookLibraryLoader read FLibraryLoader;
     property Server: THTTPServer read FServer;
+    property OnIdle: TNotifyEvent read FOnIdle write FOnIdle;
   end;
 
 var
@@ -341,6 +345,15 @@ begin
   inherited Initialize;
   FLibraryLoader.Open;
   FServer.Initialize;
+end;
+
+procedure TApplication.DoRun;
+begin
+  inherited DoRun;
+  if Assigned(FOnIdle) then
+    FOnIdle(Self)
+  else
+    Sleep(1);
 end;
 
 procedure TApplication.Run;
