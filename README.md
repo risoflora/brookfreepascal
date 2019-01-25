@@ -169,4 +169,11 @@ You can download the last release [here](https://github.com/risoflora/brookfreep
 
 The Brook supports third party solutions and, for these, there is a broker file implementing your features. You can download the package containing all files [here](https://github.com/silvioprog/brookframework/releases/download/v3.0.0/third-party.zip).
 
+## ALTERNATIVES
+
+[Brook framework](https://github.com/risoflora/brookframework) - Microframework which helps to develop web Pascal applications.
+[mORMot](https://github.com/synopse/mORMot) - Synopse mORMot ORM/SOA/MVC framework.
+[Free Spider](https://github.com/motaz/freespider) - Web development package for Free Pascal/Lazarus.
+[FCL-Web](http://wiki.freepascal.org/fcl-web) - Built-in Free Pascal web library.
+
 ## Welcome to Brook! ![Welcome to Brook!](http://l.yimg.com/us.yimg.com/i/mesg/emoticons7/113.gif)
