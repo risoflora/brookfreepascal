@@ -173,9 +173,9 @@ The Brook supports third party solutions and, for these, there is a broker file 
 
 ## ALTERNATIVES
 
-[Brook framework](https://github.com/risoflora/brookframework) - Microframework which helps to develop web Pascal applications.
-[mORMot](https://github.com/synopse/mORMot) - Synopse mORMot ORM/SOA/MVC framework.
-[Free Spider](https://github.com/motaz/freespider) - Web development package for Free Pascal/Lazarus.
-[FCL-Web](http://wiki.freepascal.org/fcl-web) - Built-in Free Pascal web library.
+* [Brook framework](https://github.com/risoflora/brookframework) - Microframework which helps to develop web Pascal applications.
+* [mORMot](https://github.com/synopse/mORMot) - Synopse mORMot ORM/SOA/MVC framework.
+* [Free Spider](https://github.com/motaz/freespider) - Web development package for Free Pascal/Lazarus.
+* [FCL-Web](http://wiki.freepascal.org/fcl-web) - Built-in Free Pascal web library.
 
 ## Welcome to Brook! ![Welcome to Brook!](http://l.yimg.com/us.yimg.com/i/mesg/emoticons7/113.gif)
