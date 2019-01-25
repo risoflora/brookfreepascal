@@ -105,17 +105,19 @@ Save and compile the project. Copy the resulting file to the CGI directory of yo
 
 ## PLUGINS
 
-* **[dOPF](https://github.com/risoflora/brookfreepascal/tree/master/plugins/dopf)** – This plugin is sleek, intuitive and fast object persistence for faster and easier database development.
-* **[RUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/rutils)** – This plugin offers some general purpose routines on string conversions, parsings, encodings and others.
-* **[JTemplate](https://github.com/risoflora/brookfreepascal/tree/master/plugins/jtemplate)** – This plugin helps you to fill variables in a template file.
-* **[QTemplate](https://github.com/leledumbo/QTemplate)** – This plugin implements an alternative to FPTemplate engine.
-* **[EasyRSS](https://github.com/risoflora/brookfreepascal/tree/master/plugins/easyrss)** – This plugin is the easiest way of Pascal developers provide news updating services in their applications.
-* **[XMailer](https://github.com/risoflora/brookfreepascal/tree/master/plugins/xmailer)** – This plugin offers a really simple way to send e-mails using Free Pascal..
-* **[AlgEx](https://github.com/risoflora/brookfreepascal/tree/master/plugins/algex)** – This plugin helps you to process algebric expressions passed as string.
-* **[MGeoIP](https://github.com/risoflora/brookfreepascal/tree/master/plugins/mgeoip)** – This plugin allows you to identify the name of country or city which IPs come from.
-* **[ConvUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/convutils)** – This plugin allows you to convert one measure (centimeters, inches, liters etc.) to another.
-* **[HtmlDoc](https://github.com/risoflora/brookfreepascal/tree/master/plugins/htmldoc)** – Whith this plugin you can write headers, body and other relevant tags using Object Pascal.
-* **[LJGridUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/ljgridutils)** – This plugin offers easy conversion from LCL to JSON and vice versa.
+* **[dOPF](https://github.com/risoflora/brookfreepascal/tree/master/plugins/dopf)** – Sleek, intuitive and fast object persistence for faster and easier database development.
+* **[RUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/rutils)** – Some general purpose routines for string conversion, parsing, encoding and more.
+* **[JTemplate](https://github.com/risoflora/brookfreepascal/tree/master/plugins/jtemplate)** – Fill variables in a template file.
+* **[QTemplate](https://github.com/leledumbo/QTemplate)** – Alternative to the FPTemplate engine.
+* **[EasyRSS](https://github.com/risoflora/brookfreepascal/tree/master/plugins/easyrss)** – Easiest way for Pascal developers to provide news updating services in their applications.
+* **[XMailer](https://github.com/risoflora/brookfreepascal/tree/master/plugins/xmailer)** – Simple way to send e-mail using Free Pascal.
+* **[AlgEx](https://github.com/risoflora/brookfreepascal/tree/master/plugins/algex)** – Process algebraic expressions passed as strings.
+* **[Captcha](https://github.com/risoflora/brookfreepascal/tree/master/plugins/captcha)** – Verification images to block bot access on login pages.
+* **[MGeoIP](https://github.com/risoflora/brookfreepascal/tree/master/plugins/mgeoip)** – Identify the name of the country or city where IPs reside.
+* **[ConvUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/convutils)** – Conversion between units of measurement (centimeters, inches, liters etc.).
+* **[HtmlDoc](https://github.com/risoflora/brookfreepascal/tree/master/plugins/htmldoc)** – Write headers, body and other relevant tags using Object Pascal.
+* **[LJGridUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/ljgridutils)** – Easy conversion from LCL to JSON and vice versa.
+* **[Brook-Telegram](https://github.com/Al-Muhandis/brook-telegram)** – Consume the Telegram Bots API in a Brook application.
 
 ## LICENSE
 
@@ -123,7 +125,7 @@ The source code of the Brook for Free Pascal is distributed under the GNU Lesser
 
 ## SYSTEM REQUIREMENTS
 
-Free Pascal **3.0.4** and Lazarus **1.8.4**.
+The stable version of [Free Pascal & Lazarus](https://sourceforge.net/projects/lazarus/).
 
 ## DOCUMENTATION
 
