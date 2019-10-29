@@ -51,7 +51,7 @@ type
   TdSqlBuilder = class(TdComponent)
   public
     procedure Build(out ASql: string;
-      const ACondition: Boolean = True); virtual; abstract;
+      const ACondition: Boolean = True; AFieldQuote: AnsiChar = #0); virtual; abstract;
   end;
 
   { TdGSqlBuilder }
@@ -70,9 +70,9 @@ type
   generic TdGSelectBuilder<T> = class(specialize TdGSqlBuilder<T>)
   public
     class function MakeFields(ATable: T; out AFields: string;
-      const AIgnoreWildcard: Boolean): Boolean; virtual;
+      const AIgnoreWildcard: Boolean; AFieldQuote: AnsiChar = #0): Boolean; virtual;
     procedure Build(out ASql: string;
-      const AIgnoreWildcard: Boolean = True); override;
+      const AIgnoreWildcard: Boolean = True; AFieldQuote: AnsiChar = #0); override;
   end;
 
   { TdGInsertBuilder }
@@ -80,9 +80,9 @@ type
   generic TdGInsertBuilder<T> = class(specialize TdGSqlBuilder<T>)
   public
     class function MakeFields(ATable: T; out AFields, AParams: string;
-      const AIgnorePrimaryKeys: Boolean): Boolean; virtual;
+      const AIgnorePrimaryKeys: Boolean; AFieldQuote: AnsiChar = #0): Boolean; virtual;
     procedure Build(out ASql: string;
-      const AIgnorePrimaryKeys: Boolean = True); override;
+      const AIgnorePrimaryKeys: Boolean = True; AFieldQuote: AnsiChar = #0); override;
   end;
 
   { TdGUpdateBuilder }
@@ -90,9 +90,9 @@ type
   generic TdGUpdateBuilder<T> = class(specialize TdGSqlBuilder<T>)
   public
     class function MakeFields(ATable: T; out AFields, AParams: string;
-      const AIgnorePrimaryKeys: Boolean): Boolean; virtual;
+      const AIgnorePrimaryKeys: Boolean; AFieldQuote: AnsiChar = #0): Boolean; virtual;
     procedure Build(out ASql: string;
-      const AIgnorePrimaryKeys: Boolean = True); override;
+      const AIgnorePrimaryKeys: Boolean = True; AFieldQuote: AnsiChar = #0); override;
   end;
 
   { TdGDeleteBuilder }
@@ -100,9 +100,9 @@ type
   generic TdGDeleteBuilder<T> = class(specialize TdGSqlBuilder<T>)
   public
     class function MakeParams(ATable: T; out AParams: string;
-      const AIgnoreProperties: Boolean): Boolean; virtual;
+      const AIgnoreProperties: Boolean; AFieldQuote: AnsiChar = #0): Boolean; virtual;
     procedure Build(out ASql: string;
-      const AIgnoreProperties: Boolean = True); override;
+      const AIgnoreProperties: Boolean = True; AFieldQuote: AnsiChar = #0); override;
   end;
 
 var
@@ -156,7 +156,7 @@ end;
 { TdGSelectBuilder }
 
 class function TdGSelectBuilder.MakeFields(ATable: T; out AFields: string;
-  const AIgnoreWildcard: Boolean): Boolean;
+  const AIgnoreWildcard: Boolean; AFieldQuote: AnsiChar): Boolean;
 var
   N: string;
   I: Integer;
@@ -174,19 +174,22 @@ begin
     N := ATable.PropList^[I]^.Name;
     if ATable.IgnoredFields.IndexOf(N) > -1 then
       Continue;
-    N += ', ';
+    if AFieldQuote = #0 then
+      N += ', '
+    else
+      N := AFieldQuote + N + AFieldQuote + ', ';
     AFields += N;
   end;
   SetLength(AFields, Length(AFields) - 2);
   AFields := LowerCase(AFields);
 end;
 
-procedure TdGSelectBuilder.Build(out ASql: string;
-  const AIgnoreWildcard: Boolean);
+procedure TdGSelectBuilder.Build(out ASql: string; const AIgnoreWildcard: Boolean;
+  AFieldQuote: AnsiChar);
 var
   FS: string;
 begin
-  if MakeFields(FTable, FS, AIgnoreWildcard) then
+  if MakeFields(FTable, FS, AIgnoreWildcard, aFieldQuote) then
   begin
     CheckTableName;
     ASql := 'select ' + FS + ' from ' + FTable.Name;
@@ -195,8 +198,8 @@ end;
 
 { TdGInsertBuilder }
 
-class function TdGInsertBuilder.MakeFields(ATable: T; out AFields,
-  AParams: string; const AIgnorePrimaryKeys: Boolean): Boolean;
+class function TdGInsertBuilder.MakeFields(ATable: T; out AFields, AParams: string;
+  const AIgnorePrimaryKeys: Boolean; AFieldQuote: AnsiChar): Boolean;
 var
   N: string;
   I: Integer;
@@ -212,9 +215,11 @@ begin
     if (ATable.IgnoredFields.IndexOf(N) > -1) or
       (AIgnorePrimaryKeys and (ATable.PrimaryKeys.IndexOf(N) > -1)) then
       Continue;
-    N += ', ';
-    AFields += N;
-    AParams += ':' + N;
+    if AFieldQuote <> #0 then
+      AFields += AFieldQuote + N + AFieldQuote + ', '
+    else
+      AFields += N + ', ';
+    AParams += ':' + N + ', ';
   end;
   SetLength(AFields, Length(AFields) - 2);
   SetLength(AParams, Length(AParams) - 2);
@@ -222,12 +227,12 @@ begin
   AParams := LowerCase(AParams);
 end;
 
-procedure TdGInsertBuilder.Build(out ASql: string;
-  const AIgnorePrimaryKeys: Boolean);
+procedure TdGInsertBuilder.Build(out ASql: string; const AIgnorePrimaryKeys: Boolean;
+  AFieldQuote: AnsiChar);
 var
   FS, PS: string;
 begin
-  if MakeFields(FTable, FS, PS, AIgnorePrimaryKeys) then
+  if MakeFields(FTable, FS, PS, AIgnorePrimaryKeys, AFieldQuote) then
   begin
     CheckTableName;
     ASql := 'insert into ' + FTable.Name + ' (' + FS + ') ' +
@@ -237,8 +242,8 @@ end;
 
 { TdGUpdateBuilder }
 
-class function TdGUpdateBuilder.MakeFields(ATable: T; out AFields,
-  AParams: string; const AIgnorePrimaryKeys: Boolean): Boolean;
+class function TdGUpdateBuilder.MakeFields(ATable: T; out AFields, AParams: string;
+  const AIgnorePrimaryKeys: Boolean; AFieldQuote: AnsiChar): Boolean;
 var
   N, P: string;
   I, X: Integer;
@@ -255,13 +260,19 @@ begin
     if X > -1 then
     begin
       P := ATable.PrimaryKeys[X];
-      AParams += P + ' = :' + P + ' and ';
+      if AFieldQuote=#0 then
+        AParams += P + ' = :' + P + ' and '
+      else
+        AParams += AFieldQuote + P + AFieldQuote + ' = :' + P + ' and ';
       if AIgnorePrimaryKeys then
         Continue;
     end;
     if ATable.IgnoredFields.IndexOf(N) > -1 then
       Continue;
-    AFields += N + ' = :' + N + ', ';
+    if AFieldQuote=#0 then
+      AFields += N + ' = :' + N + ', '
+    else
+      AFields += AFieldQuote + N + AFieldQuote + ' = :' + N + ', '
   end;
   SetLength(AFields, Length(AFields) - 2);
   AFields := LowerCase(AFields);
@@ -269,12 +280,12 @@ begin
   AParams := LowerCase(AParams);
 end;
 
-procedure TdGUpdateBuilder.Build(out ASql: string;
-  const AIgnorePrimaryKeys: Boolean);
+procedure TdGUpdateBuilder.Build(out ASql: string; const AIgnorePrimaryKeys: Boolean;
+  AFieldQuote: AnsiChar);
 var
   FS, PS: string;
 begin
-  if MakeFields(FTable, FS, PS, AIgnorePrimaryKeys) then
+  if MakeFields(FTable, FS, PS, AIgnorePrimaryKeys, AFieldQuote) then
   begin
     CheckTableName;
     ASQL := 'update ' + FTable.Name + ' set ' + FS + ' where ' + PS;
@@ -284,7 +295,7 @@ end;
 { TdGDeleteBuilder }
 
 class function TdGDeleteBuilder.MakeParams(ATable: T; out AParams: string;
-  const AIgnoreProperties: Boolean): Boolean;
+  const AIgnoreProperties: Boolean; AFieldQuote: AnsiChar): Boolean;
 var
   N, P: string;
   I, X: Integer;
@@ -300,26 +311,34 @@ begin
     if X > -1 then
     begin
       P := ATable.PrimaryKeys[X];
-      AParams += P + ' = :' + P + ' and ';
+      if AFieldQuote=#0 then
+        AParams += P + ' = :' + P + ' and '
+      else
+        AParams += AFieldQuote + P + AFieldQuote + ' = :' + P + ' and '
     end
     else
     begin
       if ATable.IgnoredFields.IndexOf(N) > -1 then
         Continue;
       if not AIgnoreProperties then
-        AParams += N + ' = :' + N + ' and ';
+      begin
+        if AFieldQuote=#0 then
+          AParams += N + ' = :' + N + ' and '
+        else
+          AParams += AFieldQuote + N + AFieldQuote + ' = :' + N + ' and '; ;
+      end;
     end;
   end;
   SetLength(AParams, Length(AParams) - 5);
   AParams := LowerCase(AParams);
 end;
 
-procedure TdGDeleteBuilder.Build(out ASql: string;
-  const AIgnoreProperties: Boolean);
+procedure TdGDeleteBuilder.Build(out ASql: string; const AIgnoreProperties: Boolean;
+  AFieldQuote: AnsiChar);
 var
   PS: string;
 begin
-  if MakeParams(FTable, PS, AIgnoreProperties) then
+  if MakeParams(FTable, PS, AIgnoreProperties, AFieldQuote) then
   begin
     CheckTableName;
     ASQL := 'delete from ' + FTable.Name + ' where ' + PS;
