@@ -360,6 +360,7 @@ type
     FOnUpdated: TNotifyEvent;
     FOnUpdating: TNotifyEvent;
     FConnection: T1;
+    FFieldQuote: AnsiChar;
     FQuery: T2;
     FTable: TTable;
     FUpdateKind: TdOpfUpdateKind;
@@ -418,6 +419,7 @@ type
     property Nulls: Boolean read GetNulls write SetNulls;
     property UseUtf8: Boolean read GetUseUtf8 write SetUseUtf8;
     property UpdateKind: TdOpfUpdateKind read FUpdateKind;
+    property FieldQuote: AnsiChar read FFieldQuote write FFieldQuote;
     property OnUpdating: TNotifyEvent read FOnUpdating write FOnUpdating;
     property OnUpdated: TNotifyEvent read FOnUpdated write FOnUpdated;
   end;
@@ -1780,6 +1782,7 @@ begin
   FQuery := T2.Create(FConnection);
   FTable := CreateTable;
   FTable.Name := ATableName;
+  FFieldQuote:=#0;
 end;
 
 destructor TdGOpf.Destroy;
@@ -1821,13 +1824,13 @@ end;
 
 procedure TdGOpf.GetFieldNames(out AFieldNames: string);
 begin
-  TSelectBuilder.MakeFields(FTable, AFieldNames, True);
+  TSelectBuilder.MakeFields(FTable, AFieldNames, True, FFieldQuote);
 end;
 
 procedure TdGOpf.GetConditions(out APairs: string;
   const AIgnoreProperties: Boolean);
 begin
-  TDeleteBuilder.MakeParams(FTable, APairs, AIgnoreProperties);
+  TDeleteBuilder.MakeParams(FTable, APairs, AIgnoreProperties, FFieldQuote);
 end;
 
 function TdGOpf.GetConditions(const AIgnoreProperties: Boolean): string;
@@ -1872,7 +1875,7 @@ begin
   else
   begin
     CheckTableName;
-    TSelectBuilder.MakeFields(FTable, FS, True);
+    TSelectBuilder.MakeFields(FTable, FS, True, FFieldQuote);
     SetSql('select ' + FS + ' from ' + FTable.Name);
     if ACondition <> '' then
       FQuery.SQL.Add('where ' + ACondition);
@@ -1932,7 +1935,7 @@ var
   PS: string = '';
 begin
   CheckEntity(AEntity);
-  TDeleteBuilder.MakeParams(FTable, PS, True);
+  TDeleteBuilder.MakeParams(FTable, PS, True, FFieldQuote);
   Result := InternalFind(AEntity, PS, AFillingObjectFilter);
 end;
 
@@ -1963,7 +1966,7 @@ begin
   CheckEntities(AEntities);
   if ASql = '' then
   begin
-    TSelectBuilder.MakeFields(FTable, FS, True);
+    TSelectBuilder.MakeFields(FTable, FS, True, FFieldQuote);
     SetSql('select ' + FS + ' from ' + FTable.Name);
   end
   else
@@ -1990,7 +1993,7 @@ begin
   CheckEntities(AEntities);
   if ASql = '' then
   begin
-    TSelectBuilder.MakeFields(FTable, FS, True);
+    TSelectBuilder.MakeFields(FTable, FS, True, FFieldQuote);
     SetSql('select ' + FS + ' from ' + FTable.Name);
   end
   else
@@ -2015,7 +2018,7 @@ begin
     FUpdateKind := ukAdd;
     DoUpdating(AEntity);
     B.SetTable(Table);
-    B.Build(S, AIgnorePrimaryKeys);
+    B.Build(S, AIgnorePrimaryKeys, FFieldQuote);
     SetSql(S);
     SetParams(AEntity);
     FQuery.Execute;
@@ -2038,7 +2041,7 @@ begin
     FUpdateKind := ukModify;
     DoUpdating(AEntity);
     B.SetTable(Table);
-    B.Build(S, AIgnorePrimaryKeys);
+    B.Build(S, AIgnorePrimaryKeys, FFieldQuote);
     SetSql(S);
     SetParams(AEntity);
     FQuery.Execute;
@@ -2061,7 +2064,7 @@ begin
     FUpdateKind := ukRemove;
     DoUpdating(AEntity);
     B.SetTable(Table);
-    B.Build(S, AIgnoreProperties);
+    B.Build(S, AIgnoreProperties, FFieldQuote);
     SetSql(S);
     SetParams(AEntity);
     FQuery.Execute;
