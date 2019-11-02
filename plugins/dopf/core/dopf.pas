@@ -360,7 +360,7 @@ type
     FOnUpdated: TNotifyEvent;
     FOnUpdating: TNotifyEvent;
     FConnection: T1;
-    FFieldQuote: AnsiChar;
+    FFieldQuote: String;
     FQuery: T2;
     FTable: TTable;
     FUpdateKind: TdOpfUpdateKind;
@@ -419,9 +419,7 @@ type
     property Nulls: Boolean read GetNulls write SetNulls;
     property UseUtf8: Boolean read GetUseUtf8 write SetUseUtf8;
     property UpdateKind: TdOpfUpdateKind read FUpdateKind;
-    { If you set a quote character in the FieldQuote property then the query field names will be enclosed by these quotes. 
-      The default is #0, which will means no any quotes }
-    property FieldQuote: AnsiChar read FFieldQuote write FFieldQuote;
+    property FieldQuote: String read FFieldQuote write FFieldQuote;
     property OnUpdating: TNotifyEvent read FOnUpdating write FOnUpdating;
     property OnUpdated: TNotifyEvent read FOnUpdated write FOnUpdated;
   end;
@@ -1784,7 +1782,6 @@ begin
   FQuery := T2.Create(FConnection);
   FTable := CreateTable;
   FTable.Name := ATableName;
-  FFieldQuote:=#0;
 end;
 
 destructor TdGOpf.Destroy;
@@ -2174,4 +2171,3 @@ begin
 end;
 
 end.
-
