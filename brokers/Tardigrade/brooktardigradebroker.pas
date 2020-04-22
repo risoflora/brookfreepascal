@@ -23,6 +23,7 @@ interface
 uses
   SysUtils,
   Classes,
+  SyncObjs,
   HTTPDefs,
   HTTPProtocol,
   CustApp,
@@ -93,8 +94,8 @@ type
   TApplication = class(TCustomApplication, IBrookApplication)
   private
     FLibraryLoader: TBrookLibraryLoader;
-    FOnIdle: TNotifyEvent;
     FServer: THTTPServer;
+    FCondVar: TEventObject;
     function GetTerminated: Boolean;
   protected
     procedure DoRun; override;
@@ -104,10 +105,10 @@ type
     destructor Destroy; override;
     procedure Initialize; override;
     procedure Run; virtual;
+    procedure Terminate(AExitCode: Integer); override;
     function Instance: TObject;
     property LibraryLoader: TBrookLibraryLoader read FLibraryLoader;
     property Server: THTTPServer read FServer;
-    property OnIdle: TNotifyEvent read FOnIdle write FOnIdle;
   end;
 
 var
@@ -319,6 +320,7 @@ end;
 constructor TApplication.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
+  FCondVar := TSimpleEvent.Create;
   FLibraryLoader := TBrookLibraryLoader.Create(nil);
   FServer := THTTPServer.Create(nil);
 end;
@@ -337,6 +339,7 @@ destructor TApplication.Destroy;
 begin
   FServer.Free;
   FLibraryLoader.Free;
+  FCondVar.Free;
   inherited Destroy;
 end;
 
@@ -350,16 +353,20 @@ end;
 procedure TApplication.DoRun;
 begin
   inherited DoRun;
-  if Assigned(FOnIdle) then
-    FOnIdle(Self)
-  else
-    Sleep(1);
+  FCondVar.WaitFor(INFINITE);
+  FCondVar.ResetEvent;
 end;
 
 procedure TApplication.Run;
 begin
   FServer.Open;
   inherited Run;
+end;
+
+procedure TApplication.Terminate(AExitCode: Integer);
+begin
+  inherited Terminate(AExitCode);
+  FCondVar.SetEvent;
 end;
 
 function TApplication.GetTerminated: Boolean;
