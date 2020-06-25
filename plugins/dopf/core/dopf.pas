@@ -348,7 +348,7 @@ type
 
   { TdGOpf }
 
-  generic TdGOpf<T1, T2, T3> = class(TdComponent)
+  generic TdGOpf<T1, T2; T3: TObject> = class(TdComponent)
   public type
     TTable = specialize TdGTable<T3>;
     TSelectBuilder = specialize TdGSelectBuilder<TTable>;
@@ -426,7 +426,7 @@ type
 
   { TdGEntityOpf }
 
-  generic TdGEntityOpf<T1, T2, T3> = class(specialize TdGOpf<T1, T2, T3>)
+  generic TdGEntityOpf<T1, T2; T3: TObject> = class(specialize TdGOpf<T1, T2, T3>)
   private
     FEntity: T3;
   protected

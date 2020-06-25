@@ -143,12 +143,12 @@ type
 
   { TdGSQLdbOpf }
 
-  generic TdGSQLdbOpf<T> = class(specialize TdGOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
+  generic TdGSQLdbOpf<T: TObject> = class(specialize TdGOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
   end;
 
   { TdGSQLdbEntityOpf }
 
-  generic TdGSQLdbEntityOpf<T> = class(specialize TdGEntityOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
+  generic TdGSQLdbEntityOpf<T: TObject> = class(specialize TdGEntityOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
   end;
 
 implementation
