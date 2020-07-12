@@ -105,7 +105,8 @@ type
     destructor Destroy; override;
     procedure Initialize; override;
     procedure Run; virtual;
-    procedure Terminate(AExitCode: Integer); override;
+    procedure Terminate; override; overload;
+    procedure Terminate(AExitCode: Integer); override; overload;
     function Instance: TObject;
     property LibraryLoader: TBrookLibraryLoader read FLibraryLoader;
     property Server: THTTPServer read FServer;
@@ -361,6 +362,11 @@ procedure TApplication.Run;
 begin
   FServer.Open;
   inherited Run;
+end;
+
+procedure TApplication.Terminate;
+begin
+  inherited Terminate;
 end;
 
 procedure TApplication.Terminate(AExitCode: Integer);

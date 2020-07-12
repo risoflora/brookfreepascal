@@ -1839,7 +1839,7 @@ end;
 
 procedure TdGOpf.CheckEntity(AEntity: T3);
 begin
-  if AEntity = nil then
+  if not Assigned(AEntity) then
     raise EdOpf.Create('Entity must not be nil.');
   if T3 = TObject then
     raise EdOpf.Create('Entity must be TObject directly.');
