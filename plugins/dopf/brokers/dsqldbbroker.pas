@@ -11,7 +11,7 @@
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 *)
 
-unit dSQLdbBroker;
+unit dsqldbbroker;
 
 {$i dopf.inc}
 
