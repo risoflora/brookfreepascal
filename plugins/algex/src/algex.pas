@@ -200,7 +200,7 @@ procedure TAlgEx.Tokenize(const AValue: string);
     {Convert Value into VToken}
     case Value[1] of
       '0'..'9',
-      ',': VToken := TOKEN_NUMBER;
+      ',', '.': VToken := TOKEN_NUMBER;
       '(': VToken := TOKEN_BOPEN;
       ')': VToken := TOKEN_BCLOSE;
       '+': VToken := TOKEN_PLUS;
@@ -287,7 +287,7 @@ begin
     VPrevOperation := VOperation;
     {Extract Numbers, Functions, Operators}
     case AValue[I] of
-      '0'..'9', ',': VOperation := 0; {Numbers}
+      '0'..'9', ',', '.': VOperation := 0; {Numbers}
       'a'..'z': VOperation := 1; {Functions}
       else
         VOperation := 2; {Operators}
