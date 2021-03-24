@@ -98,8 +98,8 @@
         <UnitName Value="BrookHttpUtils"/>
       </Item20>
       <Item21>
-        <Filename Value="..\core\brooklogger.pas"/>
-        <UnitName Value="BrookLogger"/>
+        <Filename Value="..\core\brooklog.pas"/>
+        <UnitName Value="BrookLog"/>
       </Item21>
       <Item22>
         <Filename Value="..\core\brookmessages.pas"/>
