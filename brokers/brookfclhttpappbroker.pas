@@ -20,7 +20,7 @@ unit BrookFCLHttpAppBroker;
 interface
 
 uses
-  BrookClasses, BrookApplication, BrookLogger, BrookRouter, BrookUtils,
+  BrookClasses, BrookApplication, BrookLog, BrookRouter, BrookUtils,
   BrookConsts, BrookHttpConsts, BrookHttpDefsBroker, BrookMessages, HttpDefs,
   CustWeb, CustHttpApp, FPHttpServer, Classes, SysUtils;
 

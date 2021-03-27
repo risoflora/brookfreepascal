@@ -13,7 +13,7 @@
 
 { Logger classes. }
 
-unit BrookLogger;
+unit BrookLog;
 
 {$i brook.inc}
 

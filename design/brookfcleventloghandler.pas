@@ -20,7 +20,7 @@ unit BrookFCLEventLogHandler;
 interface
 
 uses
-  BrookFCLEventLogBroker, BrookLogger;
+  BrookFCLEventLogBroker, BrookLog;
 
 type
   { Handles exceptions for @link(TBrookFCLEventLogHandler). }

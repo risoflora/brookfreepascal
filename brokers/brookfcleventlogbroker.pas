@@ -20,7 +20,7 @@ unit BrookFCLEventLogBroker;
 interface
 
 uses
-  BrookLogger, BrookUtils, EventLog, SysUtils, Classes;
+  BrookLog, BrookUtils, EventLog, SysUtils, Classes;
 
 type
 
