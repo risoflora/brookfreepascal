@@ -1,4 +1,4 @@
-## INTRODUCTION
+# INTRODUCTION
 
 **Brook for Free Pascal** is the perfect [Free Pascal](http://freepascal.org/) framework for your web applications. It's pure Pascal. You don't need to leave your preferred programming language.
 
@@ -14,7 +14,7 @@ It's complete: simple actions or configurable actions for database access, advan
 
 ## GET STARTED
 
-#### If you use Free Pascal only:
+### If you use Free Pascal only
 
 Create three files:
 
@@ -87,13 +87,11 @@ end.
 
 Compile the project `cgi1.lpr` and copy the resulting file to CGI directory of your web server. Now, in your web browser, access the following URL:
 
-```
-http://localhost/cgi-bin/cgi1
-```
+`http://localhost/cgi-bin/cgi1`
 
 ***
 
-#### If you are a Lazarus user:
+### If you are a Lazarus user
 
 Open and install the file `brookex.lpk`. After the installation, select _File | New ..._ and, in _Brook for Free Pascal_, choose the _Simple CGI application_ option as shown in the figure below:
 
@@ -105,8 +103,8 @@ Save and compile the project. Copy the resulting file to the CGI directory of yo
 
 ## PLUGINS
 
-* **[dOPF](https://github.com/risoflora/brookfreepascal/tree/master/plugins/dopf)** – Sleek, intuitive and fast object persistence for faster and easier database development.
-* **[RUtils](https://github.com/risoflora/brookfreepascal/tree/master/plugins/rutils)** – Some general purpose routines for string conversion, parsing, encoding and more.
+* **[dOPF](https://github.com/risoflora/brookfreepascal/tree/main/plugins/dopf)** – Sleek, intuitive and fast object persistence for faster and easier database development.
+* **[RUtils](https://github.com/risoflora/brookfreepascal/tree/main/plugins/rutils)** – Some general purpose routines for string conversion, parsing, encoding and more.
 * **[JTemplate](https://github.com/risoflora/brookfreepascal/tree/master/plugins/jtemplate)** – Fill variables in a template file.
 * **[QTemplate](https://github.com/leledumbo/QTemplate)** – Alternative to the FPTemplate engine.
 * **[EasyRSS](https://github.com/risoflora/brookfreepascal/tree/master/plugins/easyrss)** – Easiest way for Pascal developers to provide news updating services in their applications.
