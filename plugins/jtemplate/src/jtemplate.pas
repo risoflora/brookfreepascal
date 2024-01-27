@@ -531,7 +531,7 @@ end;
 
 procedure TJTemplate.SaveToFile(const AFileName: TFileName);
 begin
-  FStream.LoadFromFile(AFileName);
+  FStream.SaveToFile(AFileName);
 end;
 
 end.
