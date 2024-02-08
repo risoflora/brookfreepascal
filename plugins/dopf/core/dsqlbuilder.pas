@@ -34,6 +34,7 @@ type
     FPropList: PPropList;
     FName: string;
     FIgnoredFields: TStrings;
+    FWatchedFields: Tstrings;
     procedure SetName(const AValue: string);
   public
     constructor Create; virtual;
@@ -44,6 +45,7 @@ type
     property Name: string read FName write SetName;
     property PrimaryKeys: TStrings read FPrimaryKeys;
     property IgnoredFields: TStrings read FIgnoredFields;
+    property WatchedFields: TStrings read FWatchedFields;
   end;
 
   { TdSqlBuilder }
@@ -118,7 +120,8 @@ begin
   FPropCount := GetPropList(PTypeInfo(T.ClassInfo), FPropList);
   FPrimaryKeys := TStringList.Create;
   FPrimaryKeys.Add(dDefaultPrimaryKeyName);
-  FIgnoredFields := TStringList.Create;
+  FIgnoredFields := TStringList.Create;    
+  FWatchedFields := TStringList.Create;
 end;
 
 destructor TdGTable.Destroy;
@@ -127,6 +130,7 @@ begin
     FreeMem(FPropList);
   FPrimaryKeys.Free;
   FIgnoredFields.Free;
+  FWatchedFields.Free;
   inherited Destroy;
 end;
 
@@ -169,9 +173,12 @@ begin
     AFields := '*';
     Exit;
   end;
+  AFields:=EmptyStr;
   for I := 0 to Pred(ATable.PropCount) do
   begin
     N := ATable.PropList^[I]^.Name;
+    if (ATable.WatchedFields.Count<>0) and (ATable.WatchedFields.IndexOf(N) = -1) then
+      Continue;
     if ATable.IgnoredFields.IndexOf(N) > -1 then
       Continue;
     AFields += AFieldQuote + N + AFieldQuote + ', ';
@@ -209,7 +216,8 @@ begin
   begin
     N := ATable.PropList^[I]^.Name;
     if (ATable.IgnoredFields.IndexOf(N) > -1) or
-      (AIgnorePrimaryKeys and (ATable.PrimaryKeys.IndexOf(N) > -1)) then
+      (AIgnorePrimaryKeys and (ATable.PrimaryKeys.IndexOf(N) > -1)) or
+      ((ATable.WatchedFields.Count <> 0) and (ATable.WatchedFields.IndexOf(N) = -1))  then
       Continue;
     AFields += AFieldQuote + N + AFieldQuote + ', ';
     AParams += ':' + N + ', ';
@@ -257,6 +265,8 @@ begin
       if AIgnorePrimaryKeys then
         Continue;
     end;
+    if (ATable.WatchedFields.Count <> 0) and (ATable.WatchedFields.IndexOf(N) = -1) then
+      Continue;
     if ATable.IgnoredFields.IndexOf(N) > -1 then
       Continue;
     AFields += AFieldQuote + N + AFieldQuote + ' = :' + N + ', '
@@ -302,6 +312,8 @@ begin
     end
     else
     begin
+      if (ATable.WatchedFields.Count <> 0) and (ATable.WatchedFields.IndexOf(N) = -1) then
+        Continue;
       if ATable.IgnoredFields.IndexOf(N) > -1 then
         Continue;
       if not AIgnoreProperties then

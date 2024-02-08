@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="4">
+  <Package Version="5">
     <PathDelim Value="\"/>
     <Name Value="dOpfRT"/>
     <Type Value="RunTimeOnly"/>
@@ -36,7 +36,7 @@
       </Item4>
       <Item5>
         <Filename Value="..\brokers\dsqldbbroker.pas"/>
-        <UnitName Value="dSQLdbBroker"/>
+        <UnitName Value="dsqldbbroker"/>
       </Item5>
       <Item6>
         <Filename Value="..\core\dsqlbuilder.pas"/>
