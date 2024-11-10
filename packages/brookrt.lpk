@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="4">
+  <Package Version="5">
     <PathDelim Value="\"/>
     <Name Value="BrookRT"/>
     <Author Value="Silvio Clecio - https://github.com/silvioprog"/>
@@ -9,14 +9,14 @@
       <PathDelim Value="\"/>
       <SearchPaths>
         <IncludeFiles Value="..\includes"/>
-        <OtherUnitFiles Value="..\brokers;..\core"/>
+        <OtherUnitFiles Value="..\brokers;..\core;..\brokers\Tardigrade"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
     <Description Value="Brook runtime package."/>
     <License Value="See the file LICENSE, included in this distribution, for details about the copyright."/>
     <Version Major="4"/>
-    <Files Count="27">
+    <Files Count="28">
       <Item1>
         <Filename Value="..\brokers\brookfclcgibroker.pas"/>
         <UnitName Value="BrookFCLCGIBroker"/>
@@ -125,7 +125,12 @@
         <Filename Value="..\includes\brook.inc"/>
         <Type Value="Include"/>
       </Item27>
+      <Item28>
+        <Filename Value="..\brokers\Tardigrade\brooktardigradebroker.pas"/>
+        <UnitName Value="BrookTardigradeBroker"/>
+      </Item28>
     </Files>
+    <CompatibilityMode Value="True"/>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>
