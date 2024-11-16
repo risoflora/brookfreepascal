@@ -2,14 +2,14 @@
 <CONFIG>
   <Package Version="5">
     <Name Value="brooktb"/>
-    <Type Value="RunAndDesignTime"/>
     <CompilerOptions>
       <Version Value="11"/>
       <SearchPaths>
         <OtherUnitFiles Value="../brokers/Tardigrade"/>
-        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)/"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
+    <Version Release="1"/>
     <Files>
       <Item>
         <Filename Value="../brokers/Tardigrade/brooktardigradebroker.pas"/>
@@ -17,6 +17,9 @@
       </Item>
     </Files>
     <RequiredPkgs>
+      <Item>
+        <PackageName Value="BrookTardigrade"/>
+      </Item>
       <Item>
         <PackageName Value="FCL"/>
       </Item>
