@@ -1,70 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="4">
-    <PathDelim Value="\"/>
-    <Name Value="BrookDT"/>
-    <Type Value="RunAndDesignTime"/>
-    <AddToProjectUsesSection Value="True"/>
-    <Author Value="Silvio Clecio - https://github.com/silvioprog"/>
+  <Package Version="5">
+    <Name Value="brooktb"/>
     <CompilerOptions>
       <Version Value="11"/>
-      <PathDelim Value="\"/>
       <SearchPaths>
-        <IncludeFiles Value="..\includes"/>
-        <OtherUnitFiles Value="..\design"/>
-        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+        <OtherUnitFiles Value="../brokers/Tardigrade"/>
+        <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Description Value="Brook designtime package."/>
-    <License Value="See the file LICENSE, included in this distribution, for details about the copyright."/>
-    <Version Major="1"/>
-    <Files Count="7">
-      <Item1>
-        <Filename Value="..\design\brookconfiguratorhandler.pas"/>
-        <UnitName Value="BrookConfiguratorHandler"/>
-      </Item1>
-      <Item2>
-        <Filename Value="..\design\brookfcleventloghandler.pas"/>
-        <UnitName Value="BrookFCLEventLogHandler"/>
-      </Item2>
-      <Item3>
-        <Filename Value="..\design\brookmessageshandler_ptbr.pas"/>
-        <UnitName Value="BrookMessagesHandler_ptBR"/>
-      </Item3>
-      <Item4>
-        <Filename Value="..\design\brookmiddlewarehandler.pas"/>
-        <UnitName Value="BrookMiddlewareHandler"/>
-      </Item4>
-      <Item5>
-        <Filename Value="..\design\brookregallcomp.pas"/>
-        <HasRegisterProc Value="True"/>
-        <UnitName Value="BrookRegAllComp"/>
-      </Item5>
-      <Item6>
-        <Filename Value="..\design\brookrouterhandler.pas"/>
-        <UnitName Value="BrookRouterHandler"/>
-      </Item6>
-      <Item7>
-        <Filename Value="..\design\brooksessionhandler.pas"/>
-        <UnitName Value="BrookSessionHandler"/>
-      </Item7>
+    <Version Release="1"/>
+    <Files>
+      <Item>
+        <Filename Value="../brokers/Tardigrade/brooktardigradebroker.pas"/>
+        <UnitName Value="BrookTardigradeBroker"/>
+      </Item>
     </Files>
-    <RequiredPkgs Count="2">
-      <Item1>
-        <PackageName Value="BrookRT"/>
-      </Item1>
-      <Item2>
+    <RequiredPkgs>
+      <Item>
+        <PackageName Value="BrookTardigrade"/>
+      </Item>
+      <Item>
         <PackageName Value="FCL"/>
-      </Item2>
+      </Item>
     </RequiredPkgs>
     <UsageOptions>
       <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>
     <PublishOptions>
       <Version Value="2"/>
+      <UseFileFilters Value="True"/>
     </PublishOptions>
-    <CustomOptions Items="ExternHelp" Version="2">
-      <_ExternHelp Items="Count"/>
-    </CustomOptions>
   </Package>
 </CONFIG>
