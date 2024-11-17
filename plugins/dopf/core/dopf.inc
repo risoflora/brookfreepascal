@@ -1,1 +1,0 @@
-{$mode objfpc}{$H+}
