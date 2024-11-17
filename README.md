@@ -105,7 +105,7 @@ Save and compile the project. Copy the resulting file to the CGI directory of yo
 
 Almost all of these plugins can be used separatly, not necessarily bundled with Brook.
 
-* **[dOPF](https://github.com/risoflora/brookfreepascal/tree/main/plugins/dopf)** – Sleek, intuitive and fast object persistence for faster and easier database development.
+* **[dOPF](https://github.com/pascal-libs/dopf)** – Sleek, intuitive and fast object persistence for faster and easier database development.
 * **[RUtils](https://github.com/risoflora/brookfreepascal/tree/main/plugins/rutils)** – Some general purpose routines for string conversion, parsing, encoding and more.
 * **[JTemplate](https://github.com/risoflora/brookfreepascal/tree/master/plugins/jtemplate)** – Fill variables in a template file.
 * **[QTemplate](https://github.com/leledumbo/QTemplate)** – Alternative to the FPTemplate engine.
