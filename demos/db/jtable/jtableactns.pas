@@ -48,7 +48,7 @@ type
 
   { TjTableGOpf }
 
-  generic TjTableGOpf<T> = class(specialize TdGOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
+  generic TjTableGOpf<T: TObject> = class(specialize TdGOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
   private
     FOnAfterRecordCount: TjTableAfterRecordCountEvent;
     FOnAfterMakeFields: TjTableAfterMakeFieldsEvent;
@@ -107,7 +107,7 @@ type
 
   { TjTableGEntityOpf }
 
-  generic TjTableGEntityOpf<T> = class(specialize TdGEntityOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
+  generic TjTableGEntityOpf<T: TObject> = class(specialize TdGEntityOpf<TdSQLdbConnector, TdSQLdbQuery, T>)
   private
     FOnAfterRecordCount: TjTableAfterRecordCountEvent;
     FOnAfterMakeFields: TjTableAfterMakeFieldsEvent;
