@@ -14,7 +14,7 @@ uses
   Process;
 
 const
-  Target: string = '.';
+  Target: string = 'demos';
   Dependencies: array of string = ('Rhl');
 
 type
