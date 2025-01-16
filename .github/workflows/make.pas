@@ -15,7 +15,7 @@ uses
 
 const
   Target: string = 'demos';
-  Dependencies: array of string = ('Rhl', 'XMailer', 'dOPF', 'Brookframework');
+  Dependencies: array of string = ('Rhl', 'XMailer', 'dOPF', 'Brookframework', 'Synapse40.1');
 
 type
   TLog = (audit, info, error);
