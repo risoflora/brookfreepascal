@@ -1,12 +1,3 @@
 [submodule "packages/rutils"]
-	path = packages/rutils
-	url = git@github.com:SormJon/rutils.git
-[submodule "packages/dopf"]
-	path = packages/dopf
-	url = git@github.com:pascal-libs/dopf.git
-[submodule "packages/xmailer"]
-	path = packages/xmailer
-	url = git@github.com:MFernstrom/xmailer.git
-[submodule "packages/brookframework"]
-	path = packages/brookframework
-	url = git@github.com:risoflora/brookframework.git
+    path = packages/rutils
+    url = git@github.com:SormJon/rutils.git
