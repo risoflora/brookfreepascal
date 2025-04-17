@@ -1,1 +1,0 @@
-Please download Synapse from: http://www.ararat.cz/synapse/lib/exe/fetch.php/file:synapse40.zip
