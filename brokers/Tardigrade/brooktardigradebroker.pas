@@ -237,7 +237,10 @@ end;
 
 procedure THTTPResponse.DoSendContent;
 begin
-  FHandle.Send(Contents.Text, ContentType, Code);
+  if Assigned(ContentStream) then
+    FHandle.SendStream(ContentStream, Code)
+  else
+    FHandle.Send(Contents.Text, ContentType, Code);
 end;
 
 procedure THTTPResponse.CollectHeaders(AHeaders: TStrings);
