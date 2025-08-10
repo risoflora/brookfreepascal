@@ -1,4 +1,4 @@
 # AlgEx plugin.
 
-This plugin helps you to process algebric expressions passed as string.
-It supports addition, subtraction, multiplication and division and respects the priority of expressions enclosed in parentesis.
+*Warning*: the package has been moved to new [address](https://github.com/pascal-libs/algex)
+_Reason: the package works independently of brookfreepascal and can be used as a separate library_
