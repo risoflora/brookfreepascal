@@ -117,6 +117,11 @@ var
 
 implementation
 
+{$IFDEF UNIX}
+uses
+  BaseUnix, UnixType;
+{$ENDIF}
+
 { THTTPRequest }
 
 constructor THTTPRequest.Create(AHandle: TBrookHTTPRequest);
@@ -361,8 +366,29 @@ begin
   FCondVar.ResetEvent;
 end;
 
+{$IFDEF UNIX}
+var
+  VTerminationSignalled: Boolean = False;
+
+{ Runs in the signal context: it only wakes up the main loop, so that the
+  unit finalizations - including the server OnStop handler - run on the way
+  out instead of the process being killed on the spot by the default
+  disposition of SIGTERM/SIGINT }
+procedure HandleTerminationSignal({%H-}ASig: cint);
+begin
+  if VTerminationSignalled then
+    Exit;
+  VTerminationSignalled := True;
+  Application.Terminate(0);
+end;
+{$ENDIF}
+
 procedure TApplication.Run;
 begin
+  {$IFDEF UNIX}
+  fpSignal(SIGTERM, SignalHandler(@HandleTerminationSignal));
+  fpSignal(SIGINT, SignalHandler(@HandleTerminationSignal));
+  {$ENDIF}
   FServer.Open;
   inherited Run;
 end;
