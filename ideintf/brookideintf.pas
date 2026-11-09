@@ -22,7 +22,8 @@ interface
 uses
   BrookClasses, frmBrookChooseProjectType, frmBrookNewProject, frmBrookNewBroker,
   frmBrookActEdit, ProjectIntf, NewItemIntf, LazIDEIntf, ProjectResourcesIntf,
-  FormEditingIntf, Classes, SysUtils, Controls, ComCtrls, Forms, Dialogs;
+  FormEditingIntf, LCLVersion, Classes, SysUtils, Controls, ComCtrls, Forms,
+  Dialogs;
 
 type
   TBrookBrokersFileDescPascalUnit = class;
@@ -119,9 +120,16 @@ type
 
   { TBrookFileDescPascalUnitWithResource }
 
+  // In Lazarus >= 4.99 TResourceType was renamed to TProjResourceType.
+  {$IF LCL_FullVersion >= 4990000}
+  TBrookResourceType = TProjResourceType;
+  {$ELSE}
+  TBrookResourceType = TResourceType;
+  {$IFEND}
+
   TBrookFileDescPascalUnitWithResource = class(TFileDescPascalUnitWithResource)
   protected
-    function GetResourceType: TResourceType; override;
+    function GetResourceType: TBrookResourceType; override;
   end;
 
   { TBrookBrokersFileDescPascalUnit }
@@ -700,7 +708,7 @@ end;
 
 { TBrookFileDescPascalUnitWithResource }
 
-function TBrookFileDescPascalUnitWithResource.GetResourceType: TResourceType;
+function TBrookFileDescPascalUnitWithResource.GetResourceType: TBrookResourceType;
 begin
   if LazarusIDE.ActiveProject.Resources is TAbstractProjectResources then
     Result := TAbstractProjectResources(
